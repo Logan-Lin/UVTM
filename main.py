@@ -75,10 +75,10 @@ for num_entry, entry in enumerate(config):
                 for meta_type in loss_entry['extra_params']:
                     extra_param_arrs += list(data.load_meta(meta_type, 0))
                 extra_param_names = ','.join(loss_entry['extra_params'])
-            if loss_name == 'gtm':
-                loss_func = TrainLoss.gtm.GTM(num_tokens=num_roads, **loss_param,
-                                              extra_params=extra_param_arrs,
-                                              model_name_suf=extra_param_names)
+            if loss_name == 'uvtm':
+                loss_func = TrainLoss.uvtm.UVTM(num_tokens=num_roads, **loss_param,
+                                                extra_params=extra_param_arrs,
+                                                model_name_suf=extra_param_names)
             else:
                 raise NotImplementedError(f'No loss function called "{loss_name}".')
 

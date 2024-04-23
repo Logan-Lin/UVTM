@@ -34,9 +34,9 @@ def gen_transformer_mask(L_dual, L_reg, dual_valid_len, reg_valid_len):
     return batch_mask, source_mask
 
 
-class GTM(Loss):
+class UVTM(Loss):
     """
-    General Trajectory Model.
+    Universal Vehicle Trajectory Model.
     """
 
     def __init__(self, num_tokens, num_class_dict, latent_size, cand_arg_dict, extra_params,
@@ -49,7 +49,7 @@ class GTM(Loss):
         :param cand_arg_dict: dictionary containing the argument indices for various candidate meta data.
         """
         super().__init__(
-            f'GTM-latent{latent_size}-spa{spatial_weight}-temp{temporal_weight}-rn{roadnet_weight}-{model_name_suf}' +
+            f'UVTM-latent{latent_size}-spa{spatial_weight}-temp{temporal_weight}-rn{roadnet_weight}-{model_name_suf}' +
             ('' if ablation == 'none' else f'-AB{ablation}'))
 
         self.ablation = ablation  # wo_neigh, wo_coor, wo_time, fc_numenc
@@ -276,4 +276,4 @@ class GTM(Loss):
                     'roadprop': roadprop_denormalizer([0], roadprop_arr.unsqueeze(-1)).squeeze(-1).cpu().numpy(),
                     'offset': offset_arr.cpu().numpy()}
 
-        return gen_dict, f'GTM-{gen_params["gen_type"]}'
+        return gen_dict, f'UVTM-{gen_params["gen_type"]}'
