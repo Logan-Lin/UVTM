@@ -120,7 +120,7 @@ class Data:
         max_trip_len = max(Counter(trips['trip']).values())
         trip_normalizer = Normalizer(self.stat, feat_cols=[0, 2, 3, 4], norm_type='minmax')
 
-        if 'gtm-' in meta_type:
+        if 'uvtm-' in meta_type:
             params = meta_type.split('-')
             sample_rate = float(params[1])
             shuffle_target = bool(int(params[2][1:]))

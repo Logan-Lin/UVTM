@@ -12,13 +12,13 @@ class BatchPreparer:
     @staticmethod
     def fetch_prepare_func(meta_type):
         """ Fetch a specific prepare function based on the meta type. """
-        if 'gtm-' in meta_type:
-            return BatchPreparer.prepare_gtm_batch
+        if 'uvtm-' in meta_type:
+            return BatchPreparer.prepare_uvtm_batch
         else:
             raise NotImplementedError('No prepare function for meta type "' + meta_type + '".')
 
     @staticmethod
-    def prepare_gtm_batch(batch_meta, device):
+    def prepare_uvtm_batch(batch_meta, device):
         trip, src, tgt, trip_len, src_len = batch_meta
         trip, src, tgt = (torch.from_numpy(np.stack(a, 0)).float().to(device) for a in [trip, src, tgt])
         trip_len, src_len = [torch.tensor(a).long().to(device) for a in [trip_len, src_len]]
