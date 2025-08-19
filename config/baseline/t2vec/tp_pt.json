@@ -1,0 +1,57 @@
+[
+    {
+        "repeat": 1,
+        "data": {
+            "name": "pt23"
+        },
+        "models": [
+            {
+                "name": "rnn_encoder",
+                "config": {
+                    "rnn_type": "gru",
+                    "input_size": 3,
+                    "hidden_size": 256,
+                    "num_layers": 2,
+                    "input_con_cols": [
+                        0,
+                        3,
+                        4
+                    ],
+                    "input_dis_cols": [
+                        11
+                    ],
+                    "dis_num_classes": [
+                        500
+                    ]
+                }
+            }
+        ],
+        "downstream": {
+            "select_models": [
+                0
+            ],
+            "task": "destination",
+            "train_config": {
+                "finetune": true,
+                "batch_size": 256,
+                "num_epoch": 1,
+                "lr": 1e-3,
+                "meta_types": [
+                    "grid-60-20",
+                    "destination"
+                ],
+                "enc_meta_i": [
+                    0
+                ],
+                "label_meta_i": [
+                    1
+                ],
+                "pre_length": 1
+            },
+            "predictor_config": {
+                "input_size": 256,
+                "hidden_size": 256
+            }
+        }
+    }
+]

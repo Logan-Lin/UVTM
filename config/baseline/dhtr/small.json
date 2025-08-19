@@ -1,0 +1,65 @@
+[
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23_small"
+        },
+        "models": [
+            {
+                "name": "rnn_encoder",
+                "config": {
+                    "rnn_type": "gru",
+                    "input_size": 2,
+                    "hidden_size": 128,
+                    "num_layers": 2,
+                    "input_cols": [
+                        3,
+                        4
+                    ]
+                }
+            },
+            {
+                "name": "rnn_decoder",
+                "config": {
+                    "rnn_type": "gru",
+                    "input_size": 2,
+                    "hidden_size": 128,
+                    "output_size": 128,
+                    "num_layers": 2
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "coorseq2seq",
+                "config": {
+                    "latent_size": 128
+                }
+            },
+            "trainer": {
+                "name": "generative",
+                "config": {
+                    "num_epoch": 5,
+                    "batch_size": 32,
+                    "lr": 1e-3,
+                    "train_prop": 1.0,
+                    "meta_types": [
+                        "raw-60",
+                        "raw-0"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [
+                        1
+                    ],
+                    "con_meta_i": []
+                }
+            },
+            "generation": {
+                "eval_set": 2
+            }
+        }
+    }
+]

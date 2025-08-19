@@ -1,0 +1,1502 @@
+[
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23"
+        },
+        "models": [
+            {
+                "name": "dualpos_transformer",
+                "config": {
+                    "d_model": 128,
+                    "hidden_size": 256,
+                    "num_layers": 2,
+                    "num_heads": 8,
+                    "output_size": 128,
+                    "mt_strategy": "attention",
+                    "repeat_output": true,
+                    "num_token_att_layers": 1
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "glmmt",
+                "config": {
+                    "num_class_dict": {
+                        "weekday": 7
+                    },
+                    "latent_size": 128,
+                    "cand_arg_dict": {
+                        "in_seq": 0,
+                        "in_token": 0
+                    }
+                },
+                "extra_params": [
+                    "seqcand"
+                ]
+            },
+            "trainer": {
+                "name": "generative",
+                "config": {
+                    "num_epoch": 1,
+                    "batch_size": 256,
+                    "lr": 1e-3,
+                    "meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            },
+            "generation": {
+                "eval_set": 2,
+                "config": {
+                    "gen_meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [],
+                    "rec_meta_i": [
+                        0
+                    ],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23"
+        },
+        "models": [
+            {
+                "name": "dualpos_transformer",
+                "config": {
+                    "d_model": 128,
+                    "hidden_size": 256,
+                    "num_layers": 2,
+                    "num_heads": 8,
+                    "output_size": 128,
+                    "mt_strategy": "attention",
+                    "repeat_output": true,
+                    "num_token_att_layers": 1
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "glmmt",
+                "config": {
+                    "num_class_dict": {
+                        "weekday": 7
+                    },
+                    "latent_size": 128,
+                    "cand_arg_dict": {
+                        "in_seq": 0,
+                        "in_token": 0
+                    }
+                },
+                "extra_params": [
+                    "seqcand"
+                ]
+            },
+            "trainer": {
+                "name": "generative",
+                "config": {
+                    "num_epoch": 2,
+                    "batch_size": 256,
+                    "lr": 1e-3,
+                    "meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            },
+            "generation": {
+                "eval_set": 2,
+                "config": {
+                    "gen_meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [],
+                    "rec_meta_i": [
+                        0
+                    ],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23"
+        },
+        "models": [
+            {
+                "name": "dualpos_transformer",
+                "config": {
+                    "d_model": 128,
+                    "hidden_size": 256,
+                    "num_layers": 2,
+                    "num_heads": 8,
+                    "output_size": 128,
+                    "mt_strategy": "attention",
+                    "repeat_output": true,
+                    "num_token_att_layers": 1
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "glmmt",
+                "config": {
+                    "num_class_dict": {
+                        "weekday": 7
+                    },
+                    "latent_size": 128,
+                    "cand_arg_dict": {
+                        "in_seq": 0,
+                        "in_token": 0
+                    }
+                },
+                "extra_params": [
+                    "seqcand"
+                ]
+            },
+            "trainer": {
+                "name": "generative",
+                "config": {
+                    "num_epoch": 3,
+                    "batch_size": 256,
+                    "lr": 1e-3,
+                    "meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            },
+            "generation": {
+                "eval_set": 2,
+                "config": {
+                    "gen_meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [],
+                    "rec_meta_i": [
+                        0
+                    ],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23"
+        },
+        "models": [
+            {
+                "name": "dualpos_transformer",
+                "config": {
+                    "d_model": 128,
+                    "hidden_size": 256,
+                    "num_layers": 2,
+                    "num_heads": 8,
+                    "output_size": 128,
+                    "mt_strategy": "attention",
+                    "repeat_output": true,
+                    "num_token_att_layers": 1
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "glmmt",
+                "config": {
+                    "num_class_dict": {
+                        "weekday": 7
+                    },
+                    "latent_size": 128,
+                    "cand_arg_dict": {
+                        "in_seq": 0,
+                        "in_token": 0
+                    }
+                },
+                "extra_params": [
+                    "seqcand"
+                ]
+            },
+            "trainer": {
+                "name": "generative",
+                "config": {
+                    "num_epoch": 4,
+                    "batch_size": 256,
+                    "lr": 1e-3,
+                    "meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            },
+            "generation": {
+                "eval_set": 2,
+                "config": {
+                    "gen_meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [],
+                    "rec_meta_i": [
+                        0
+                    ],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23"
+        },
+        "models": [
+            {
+                "name": "dualpos_transformer",
+                "config": {
+                    "d_model": 128,
+                    "hidden_size": 256,
+                    "num_layers": 2,
+                    "num_heads": 8,
+                    "output_size": 128,
+                    "mt_strategy": "attention",
+                    "repeat_output": true,
+                    "num_token_att_layers": 1
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "glmmt",
+                "config": {
+                    "num_class_dict": {
+                        "weekday": 7
+                    },
+                    "latent_size": 128,
+                    "cand_arg_dict": {
+                        "in_seq": 0,
+                        "in_token": 0
+                    }
+                },
+                "extra_params": [
+                    "seqcand"
+                ]
+            },
+            "trainer": {
+                "name": "generative",
+                "config": {
+                    "num_epoch": 5,
+                    "batch_size": 256,
+                    "lr": 1e-3,
+                    "meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            },
+            "generation": {
+                "eval_set": 2,
+                "config": {
+                    "gen_meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [],
+                    "rec_meta_i": [
+                        0
+                    ],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23"
+        },
+        "models": [
+            {
+                "name": "dualpos_transformer",
+                "config": {
+                    "d_model": 128,
+                    "hidden_size": 256,
+                    "num_layers": 2,
+                    "num_heads": 8,
+                    "output_size": 128,
+                    "mt_strategy": "attention",
+                    "repeat_output": true,
+                    "num_token_att_layers": 1
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "glmmt",
+                "config": {
+                    "num_class_dict": {
+                        "weekday": 7
+                    },
+                    "latent_size": 128,
+                    "cand_arg_dict": {
+                        "in_seq": 0,
+                        "in_token": 0
+                    }
+                },
+                "extra_params": [
+                    "seqcand"
+                ]
+            },
+            "trainer": {
+                "name": "generative",
+                "config": {
+                    "num_epoch": 6,
+                    "batch_size": 256,
+                    "lr": 1e-3,
+                    "meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            },
+            "generation": {
+                "eval_set": 2,
+                "config": {
+                    "gen_meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [],
+                    "rec_meta_i": [
+                        0
+                    ],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23"
+        },
+        "models": [
+            {
+                "name": "dualpos_transformer",
+                "config": {
+                    "d_model": 128,
+                    "hidden_size": 256,
+                    "num_layers": 2,
+                    "num_heads": 8,
+                    "output_size": 128,
+                    "mt_strategy": "attention",
+                    "repeat_output": true,
+                    "num_token_att_layers": 1
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "glmmt",
+                "config": {
+                    "num_class_dict": {
+                        "weekday": 7
+                    },
+                    "latent_size": 128,
+                    "cand_arg_dict": {
+                        "in_seq": 0,
+                        "in_token": 0
+                    }
+                },
+                "extra_params": [
+                    "seqcand"
+                ]
+            },
+            "trainer": {
+                "name": "generative",
+                "config": {
+                    "num_epoch": 7,
+                    "batch_size": 256,
+                    "lr": 1e-3,
+                    "meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            },
+            "generation": {
+                "eval_set": 2,
+                "config": {
+                    "gen_meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [],
+                    "rec_meta_i": [
+                        0
+                    ],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23"
+        },
+        "models": [
+            {
+                "name": "dualpos_transformer",
+                "config": {
+                    "d_model": 128,
+                    "hidden_size": 256,
+                    "num_layers": 2,
+                    "num_heads": 8,
+                    "output_size": 128,
+                    "mt_strategy": "attention",
+                    "repeat_output": true,
+                    "num_token_att_layers": 1
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "glmmt",
+                "config": {
+                    "num_class_dict": {
+                        "weekday": 7
+                    },
+                    "latent_size": 128,
+                    "cand_arg_dict": {
+                        "in_seq": 0,
+                        "in_token": 0
+                    }
+                },
+                "extra_params": [
+                    "seqcand"
+                ]
+            },
+            "trainer": {
+                "name": "generative",
+                "config": {
+                    "num_epoch": 8,
+                    "batch_size": 256,
+                    "lr": 1e-3,
+                    "meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            },
+            "generation": {
+                "eval_set": 2,
+                "config": {
+                    "gen_meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [],
+                    "rec_meta_i": [
+                        0
+                    ],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23"
+        },
+        "models": [
+            {
+                "name": "dualpos_transformer",
+                "config": {
+                    "d_model": 128,
+                    "hidden_size": 256,
+                    "num_layers": 2,
+                    "num_heads": 8,
+                    "output_size": 128,
+                    "mt_strategy": "attention",
+                    "repeat_output": true,
+                    "num_token_att_layers": 1
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "glmmt",
+                "config": {
+                    "num_class_dict": {
+                        "weekday": 7
+                    },
+                    "latent_size": 128,
+                    "cand_arg_dict": {
+                        "in_seq": 0,
+                        "in_token": 0
+                    }
+                },
+                "extra_params": [
+                    "seqcand"
+                ]
+            },
+            "trainer": {
+                "name": "generative",
+                "config": {
+                    "num_epoch": 9,
+                    "batch_size": 256,
+                    "lr": 1e-3,
+                    "meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            },
+            "generation": {
+                "eval_set": 2,
+                "config": {
+                    "gen_meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [],
+                    "rec_meta_i": [
+                        0
+                    ],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23"
+        },
+        "models": [
+            {
+                "name": "dualpos_transformer",
+                "config": {
+                    "d_model": 128,
+                    "hidden_size": 256,
+                    "num_layers": 2,
+                    "num_heads": 8,
+                    "output_size": 128,
+                    "mt_strategy": "attention",
+                    "repeat_output": true,
+                    "num_token_att_layers": 1
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "glmmt",
+                "config": {
+                    "num_class_dict": {
+                        "weekday": 7
+                    },
+                    "latent_size": 128,
+                    "cand_arg_dict": {
+                        "in_seq": 0,
+                        "in_token": 0
+                    }
+                },
+                "extra_params": [
+                    "seqcand"
+                ]
+            },
+            "trainer": {
+                "name": "generative",
+                "config": {
+                    "num_epoch": 10,
+                    "batch_size": 256,
+                    "lr": 1e-3,
+                    "meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            },
+            "generation": {
+                "eval_set": 2,
+                "config": {
+                    "gen_meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [],
+                    "rec_meta_i": [
+                        0
+                    ],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23"
+        },
+        "models": [
+            {
+                "name": "dualpos_transformer",
+                "config": {
+                    "d_model": 128,
+                    "hidden_size": 256,
+                    "num_layers": 2,
+                    "num_heads": 8,
+                    "output_size": 128,
+                    "mt_strategy": "attention",
+                    "repeat_output": true,
+                    "num_token_att_layers": 1
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "glmmt",
+                "config": {
+                    "num_class_dict": {
+                        "weekday": 7
+                    },
+                    "latent_size": 128,
+                    "cand_arg_dict": {
+                        "in_seq": 0,
+                        "in_token": 0
+                    }
+                },
+                "extra_params": [
+                    "seqcand"
+                ]
+            },
+            "trainer": {
+                "name": "generative",
+                "config": {
+                    "num_epoch": 11,
+                    "batch_size": 256,
+                    "lr": 1e-3,
+                    "meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            },
+            "generation": {
+                "eval_set": 2,
+                "config": {
+                    "gen_meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [],
+                    "rec_meta_i": [
+                        0
+                    ],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23"
+        },
+        "models": [
+            {
+                "name": "dualpos_transformer",
+                "config": {
+                    "d_model": 128,
+                    "hidden_size": 256,
+                    "num_layers": 2,
+                    "num_heads": 8,
+                    "output_size": 128,
+                    "mt_strategy": "attention",
+                    "repeat_output": true,
+                    "num_token_att_layers": 1
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "glmmt",
+                "config": {
+                    "num_class_dict": {
+                        "weekday": 7
+                    },
+                    "latent_size": 128,
+                    "cand_arg_dict": {
+                        "in_seq": 0,
+                        "in_token": 0
+                    }
+                },
+                "extra_params": [
+                    "seqcand"
+                ]
+            },
+            "trainer": {
+                "name": "generative",
+                "config": {
+                    "num_epoch": 12,
+                    "batch_size": 256,
+                    "lr": 1e-3,
+                    "meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            },
+            "generation": {
+                "eval_set": 2,
+                "config": {
+                    "gen_meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [],
+                    "rec_meta_i": [
+                        0
+                    ],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23"
+        },
+        "models": [
+            {
+                "name": "dualpos_transformer",
+                "config": {
+                    "d_model": 128,
+                    "hidden_size": 256,
+                    "num_layers": 2,
+                    "num_heads": 8,
+                    "output_size": 128,
+                    "mt_strategy": "attention",
+                    "repeat_output": true,
+                    "num_token_att_layers": 1
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "glmmt",
+                "config": {
+                    "num_class_dict": {
+                        "weekday": 7
+                    },
+                    "latent_size": 128,
+                    "cand_arg_dict": {
+                        "in_seq": 0,
+                        "in_token": 0
+                    }
+                },
+                "extra_params": [
+                    "seqcand"
+                ]
+            },
+            "trainer": {
+                "name": "generative",
+                "config": {
+                    "num_epoch": 13,
+                    "batch_size": 256,
+                    "lr": 1e-3,
+                    "meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            },
+            "generation": {
+                "eval_set": 2,
+                "config": {
+                    "gen_meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [],
+                    "rec_meta_i": [
+                        0
+                    ],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23"
+        },
+        "models": [
+            {
+                "name": "dualpos_transformer",
+                "config": {
+                    "d_model": 128,
+                    "hidden_size": 256,
+                    "num_layers": 2,
+                    "num_heads": 8,
+                    "output_size": 128,
+                    "mt_strategy": "attention",
+                    "repeat_output": true,
+                    "num_token_att_layers": 1
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "glmmt",
+                "config": {
+                    "num_class_dict": {
+                        "weekday": 7
+                    },
+                    "latent_size": 128,
+                    "cand_arg_dict": {
+                        "in_seq": 0,
+                        "in_token": 0
+                    }
+                },
+                "extra_params": [
+                    "seqcand"
+                ]
+            },
+            "trainer": {
+                "name": "generative",
+                "config": {
+                    "num_epoch": 14,
+                    "batch_size": 256,
+                    "lr": 1e-3,
+                    "meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            },
+            "generation": {
+                "eval_set": 2,
+                "config": {
+                    "gen_meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [],
+                    "rec_meta_i": [
+                        0
+                    ],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23"
+        },
+        "models": [
+            {
+                "name": "dualpos_transformer",
+                "config": {
+                    "d_model": 128,
+                    "hidden_size": 256,
+                    "num_layers": 2,
+                    "num_heads": 8,
+                    "output_size": 128,
+                    "mt_strategy": "attention",
+                    "repeat_output": true,
+                    "num_token_att_layers": 1
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "glmmt",
+                "config": {
+                    "num_class_dict": {
+                        "weekday": 7
+                    },
+                    "latent_size": 128,
+                    "cand_arg_dict": {
+                        "in_seq": 0,
+                        "in_token": 0
+                    }
+                },
+                "extra_params": [
+                    "seqcand"
+                ]
+            },
+            "trainer": {
+                "name": "generative",
+                "config": {
+                    "num_epoch": 15,
+                    "batch_size": 256,
+                    "lr": 1e-3,
+                    "meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            },
+            "generation": {
+                "eval_set": 2,
+                "config": {
+                    "gen_meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [],
+                    "rec_meta_i": [
+                        0
+                    ],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23"
+        },
+        "models": [
+            {
+                "name": "dualpos_transformer",
+                "config": {
+                    "d_model": 128,
+                    "hidden_size": 256,
+                    "num_layers": 2,
+                    "num_heads": 8,
+                    "output_size": 128,
+                    "mt_strategy": "attention",
+                    "repeat_output": true,
+                    "num_token_att_layers": 1
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "glmmt",
+                "config": {
+                    "num_class_dict": {
+                        "weekday": 7
+                    },
+                    "latent_size": 128,
+                    "cand_arg_dict": {
+                        "in_seq": 0,
+                        "in_token": 0
+                    }
+                },
+                "extra_params": [
+                    "seqcand"
+                ]
+            },
+            "trainer": {
+                "name": "generative",
+                "config": {
+                    "num_epoch": 16,
+                    "batch_size": 256,
+                    "lr": 1e-3,
+                    "meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            },
+            "generation": {
+                "eval_set": 2,
+                "config": {
+                    "gen_meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [],
+                    "rec_meta_i": [
+                        0
+                    ],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23"
+        },
+        "models": [
+            {
+                "name": "dualpos_transformer",
+                "config": {
+                    "d_model": 128,
+                    "hidden_size": 256,
+                    "num_layers": 2,
+                    "num_heads": 8,
+                    "output_size": 128,
+                    "mt_strategy": "attention",
+                    "repeat_output": true,
+                    "num_token_att_layers": 1
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "glmmt",
+                "config": {
+                    "num_class_dict": {
+                        "weekday": 7
+                    },
+                    "latent_size": 128,
+                    "cand_arg_dict": {
+                        "in_seq": 0,
+                        "in_token": 0
+                    }
+                },
+                "extra_params": [
+                    "seqcand"
+                ]
+            },
+            "trainer": {
+                "name": "generative",
+                "config": {
+                    "num_epoch": 17,
+                    "batch_size": 256,
+                    "lr": 1e-3,
+                    "meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            },
+            "generation": {
+                "eval_set": 2,
+                "config": {
+                    "gen_meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [],
+                    "rec_meta_i": [
+                        0
+                    ],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23"
+        },
+        "models": [
+            {
+                "name": "dualpos_transformer",
+                "config": {
+                    "d_model": 128,
+                    "hidden_size": 256,
+                    "num_layers": 2,
+                    "num_heads": 8,
+                    "output_size": 128,
+                    "mt_strategy": "attention",
+                    "repeat_output": true,
+                    "num_token_att_layers": 1
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "glmmt",
+                "config": {
+                    "num_class_dict": {
+                        "weekday": 7
+                    },
+                    "latent_size": 128,
+                    "cand_arg_dict": {
+                        "in_seq": 0,
+                        "in_token": 0
+                    }
+                },
+                "extra_params": [
+                    "seqcand"
+                ]
+            },
+            "trainer": {
+                "name": "generative",
+                "config": {
+                    "num_epoch": 18,
+                    "batch_size": 256,
+                    "lr": 1e-3,
+                    "meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            },
+            "generation": {
+                "eval_set": 2,
+                "config": {
+                    "gen_meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [],
+                    "rec_meta_i": [
+                        0
+                    ],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23"
+        },
+        "models": [
+            {
+                "name": "dualpos_transformer",
+                "config": {
+                    "d_model": 128,
+                    "hidden_size": 256,
+                    "num_layers": 2,
+                    "num_heads": 8,
+                    "output_size": 128,
+                    "mt_strategy": "attention",
+                    "repeat_output": true,
+                    "num_token_att_layers": 1
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "glmmt",
+                "config": {
+                    "num_class_dict": {
+                        "weekday": 7
+                    },
+                    "latent_size": 128,
+                    "cand_arg_dict": {
+                        "in_seq": 0,
+                        "in_token": 0
+                    }
+                },
+                "extra_params": [
+                    "seqcand"
+                ]
+            },
+            "trainer": {
+                "name": "generative",
+                "config": {
+                    "num_epoch": 19,
+                    "batch_size": 256,
+                    "lr": 1e-3,
+                    "meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            },
+            "generation": {
+                "eval_set": 2,
+                "config": {
+                    "gen_meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [],
+                    "rec_meta_i": [
+                        0
+                    ],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23"
+        },
+        "models": [
+            {
+                "name": "dualpos_transformer",
+                "config": {
+                    "d_model": 128,
+                    "hidden_size": 256,
+                    "num_layers": 2,
+                    "num_heads": 8,
+                    "output_size": 128,
+                    "mt_strategy": "attention",
+                    "repeat_output": true,
+                    "num_token_att_layers": 1
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "glmmt",
+                "config": {
+                    "num_class_dict": {
+                        "weekday": 7
+                    },
+                    "latent_size": 128,
+                    "cand_arg_dict": {
+                        "in_seq": 0,
+                        "in_token": 0
+                    }
+                },
+                "extra_params": [
+                    "seqcand"
+                ]
+            },
+            "trainer": {
+                "name": "generative",
+                "config": {
+                    "num_epoch": 20,
+                    "batch_size": 256,
+                    "lr": 1e-3,
+                    "meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            },
+            "generation": {
+                "eval_set": 2,
+                "config": {
+                    "gen_meta_types": [
+                        "glmmt-60-s0-tte",
+                        "distcand-100"
+                    ],
+                    "enc_meta_i": [],
+                    "rec_meta_i": [
+                        0
+                    ],
+                    "con_meta_i": [
+                        1
+                    ]
+                }
+            }
+        }
+    }
+]

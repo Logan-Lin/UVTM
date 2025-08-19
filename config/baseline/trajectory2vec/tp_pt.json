@@ -1,0 +1,80 @@
+[
+    {
+        "repeat": 1,
+        "data": {
+            "name": "pt23"
+        },
+        "models": [
+            {
+                "name": "rnn_encoder",
+                "config": {
+                    "rnn_type": "lstm",
+                    "input_size": 18,
+                    "hidden_size": 256,
+                    "num_layers": 2
+                }
+            },
+            {
+                "name": "lstm_decoder",
+                "config": {
+                    "input_size": 18,
+                    "hidden_size": 256,
+                    "output_size": 18,
+                    "num_layers": 2
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "seq2seq"
+            },
+            "trainer": {
+                "name": "generative",
+                "config": {
+                    "num_epoch": 1,
+                    "batch_size": 256,
+                    "lr": 1e-3,
+                    "train_prop": 1.0,
+                    "meta_types": [
+                        "trajectory2vec-60-2-1"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [
+                        0
+                    ],
+                    "con_meta_i": []
+                }
+            }
+        },
+        "downstream": {
+            "select_models": [
+                0
+            ],
+            "task": "destination",
+            "train_config": {
+                "finetune": true,
+                "batch_size": 256,
+                "num_epoch": 1,
+                "lr": 1e-3,
+                "meta_types": [
+                    "trajectory2vec-60-2-1",
+                    "destination"
+                ],
+                "enc_meta_i": [
+                    0
+                ],
+                "label_meta_i": [
+                    1
+                ],
+                "pre_length": 1
+            },
+            "predictor_config": {
+                "input_size": 256,
+                "hidden_size": 256
+            }
+        }
+    }
+]

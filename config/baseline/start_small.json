@@ -1,0 +1,114 @@
+[
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23_small"
+        },
+        "models": [
+            {
+                "name": "bert",
+                "config": {
+                    "d_model": 128,
+                    "num_layers": 3,
+                    "hidden_size": 256,
+                    "num_heads": 8,
+                    "output_size": 128,
+                    "dis_feats": [
+                        5,
+                        8
+                    ],
+                    "num_embeds": [
+                        7,
+                        1440
+                    ],
+                    "con_feats": [],
+                    "road_feat": 1,
+                    "token_feat": 9
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "start",
+                "config": {
+                    "simclr_params": {
+                        "embed_dim": 128,
+                        "similarity": "inner",
+                        "temperature": 0.05
+                    },
+                    "mlm_params": {
+                        "dis_feat": 1,
+                        "latent_size": 128
+                    }
+                }
+            },
+            "trainer": {
+                "name": "multiple",
+                "config": {
+                    "num_epoch": 5,
+                    "batch_size": 32,
+                    "lr": 1e-3,
+                    "train_prop": 1.0,
+                    "meta_types": [
+                        "mlm-0-60",
+                        "mlm-0-60-timemat",
+                        "trim-0-0.1",
+                        "trim-0-0.1-timemat",
+                        "shift-0-0.15",
+                        "shift-0-0.15-timemat"
+                    ],
+                    "contra_meta_i": [
+                        2,
+                        3,
+                        4,
+                        5
+                    ],
+                    "gen_enc_meta_i": [
+                        0,
+                        1
+                    ],
+                    "gen_rec_meta_i": [
+                        0,
+                        1
+                    ],
+                    "loss_coef": [
+                        0.4,
+                        0.6
+                    ]
+                }
+            }
+        },
+        "downstream": {
+            "task": "destination",
+            "select_models": [
+                0
+            ],
+            "predictor_config": {
+                "input_size": 128,
+                "hidden_size": 256
+            },
+            "eval_set": 2,
+            "config": {
+                "finetune": false,
+                "num_epoch": 10,
+                "batch_size": 32,
+                "lr": 1e-3,
+                "es_epoch": 10,
+                "pre_length": 3,
+                "meta_types": [
+                    "mlm-0-60",
+                    "mlm-0-60-timemat",
+                    "destination"
+                ],
+                "enc_meta_i": [
+                    0,
+                    1
+                ],
+                "label_meta_i": [
+                    2
+                ]
+            }
+        }
+    }
+]

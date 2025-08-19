@@ -1,0 +1,65 @@
+[
+    {
+        "repeat": 1,
+        "data": {
+            "name": "pt23"
+        },
+        "models": [
+            {
+                "name": "rnn_encoder",
+                "config": {
+                    "rnn_type": "lstm",
+                    "input_size": 2,
+                    "hidden_size": 256,
+                    "num_layers": 2,
+                    "input_con_cols": [
+                        3,
+                        4
+                    ]
+                }
+            },
+            {
+                "name": "rnn_decoder",
+                "config": {
+                    "rnn_type": "lstm",
+                    "input_size": 2,
+                    "hidden_size": 256,
+                    "output_size": 256,
+                    "num_layers": 2
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "coorseq2seq",
+                "config": {
+                    "latent_size": 256
+                }
+            },
+            "trainer": {
+                "name": "generative",
+                "config": {
+                    "num_epoch": 1,
+                    "batch_size": 256,
+                    "lr": 1e-3,
+                    "train_prop": 1.0,
+                    "meta_types": [
+                        "raw-60",
+                        "raw-0"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [
+                        1
+                    ],
+                    "con_meta_i": []
+                }
+            },
+            "generation": {
+                "eval_set": 2
+            }
+        }
+    }
+]

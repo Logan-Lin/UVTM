@@ -1,0 +1,52 @@
+[
+    {
+        "repeat": 1,
+        "data": {
+            "name": "pt23"
+        },
+        "models": [
+            {
+                "name": "trans_encoder",
+                "config": {
+                    "input_size": 3,
+                    "d_model": 128,
+                    "hidden_size": 256,
+                    "num_layers": 2,
+                    "input_cols": [
+                        0,
+                        3,
+                        4
+                    ],
+                    "pool_out": true
+                }
+            }
+        ],
+        "downstream": {
+            "select_models": [
+                0
+            ],
+            "task": "destination",
+            "train_config": {
+                "finetune": true,
+                "batch_size": 256,
+                "num_epoch": 20,
+                "lr": 1e-3,
+                "meta_types": [
+                    "raw-0",
+                    "destination"
+                ],
+                "enc_meta_i": [
+                    0
+                ],
+                "label_meta_i": [
+                    1
+                ],
+                "pre_length": 1
+            },
+            "predictor_config": {
+                "input_size": 128,
+                "hidden_size": 256
+            }
+        }
+    }
+]

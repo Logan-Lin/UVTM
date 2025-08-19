@@ -1,0 +1,51 @@
+[
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23_small"
+        },
+        "models": [
+            {
+                "name": "rnn_encoder",
+                "config": {
+                    "rnn_type": "gru",
+                    "input_size": 3,
+                    "hidden_size": 128,
+                    "num_layers": 2,
+                    "input_cols": [
+                        0,
+                        3,
+                        4
+                    ]
+                }
+            }
+        ],
+        "downstream": {
+            "select_models": [
+                0
+            ],
+            "task": "destination",
+            "train_config": {
+                "finetune": true,
+                "batch_size": 256,
+                "num_epoch": 20,
+                "lr": 1e-3,
+                "meta_types": [
+                    "raw-60",
+                    "destination"
+                ],
+                "enc_meta_i": [
+                    0
+                ],
+                "label_meta_i": [
+                    1
+                ],
+                "pre_length": 1
+            },
+            "predictor_config": {
+                "input_size": 128,
+                "hidden_size": 256
+            }
+        }
+    }
+]

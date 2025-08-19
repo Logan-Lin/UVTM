@@ -1,0 +1,99 @@
+[
+    {
+        "repeat": 1,
+        "data": {
+            "name": "cd23_small"
+        },
+        "models": [
+            {
+                "name": "trajsim_encoder",
+                "config": {
+                    "d_model": 32,
+                    "hidden_size": 32,
+                    "num_layers": 3,
+                    "dropout": 0.2,
+                    "bidirectional": true,
+                    "grid_col": 1
+                }
+            },
+            {
+                "name": "trajsim_decoder",
+                "config": {
+                    "d_model": 32,
+                    "hidden_size": 32,
+                    "num_layers": 3,
+                    "dropout": 0.2,
+                    "grid_col": 1
+                }
+            },
+            {
+                "name": "trajsim_embed",
+                "config": {
+                    "meta_type": "trajsim-60-0.001-300-2",
+                    "d_model": 32
+                }
+            }
+        ],
+        "pretrain": {
+            "load": false,
+            "loss": {
+                "name": "trajsim",
+                "config": {
+                    "hidden_size": 32,
+                    "criterion_name": "KLDIV",
+                    "dist_decay_speed": 0.8,
+                    "timeWeight": 0.2,
+                    "use_discriminative": true,
+                    "discriminative_w": 0.5,
+                    "dis_freq": 10,
+                    "generator_batch": 256
+                }
+            },
+            "trainer": {
+                "name": "trajsim",
+                "config": {
+                    "num_epoch": 2,
+                    "batch_size": 32,
+                    "lr": 1e-3,
+                    "train_prop": 1.0,
+                    "meta_types": [
+                        "trajsim-60-0.001-300-2"
+                    ],
+                    "enc_meta_i": [
+                        0
+                    ],
+                    "rec_meta_i": [
+                        0
+                    ]
+                }
+            }
+        },
+        "downstream": {
+            "select_models": [
+                0
+            ],
+            "task": "destination",
+            "train_config": {
+                "finetune": true,
+                "batch_size": 256,
+                "num_epoch": 30,
+                "lr": 1e-3,
+                "meta_types": [
+                    "trajsim-60-0.001-300-2",
+                    "destination"
+                ],
+                "enc_meta_i": [
+                    0
+                ],
+                "label_meta_i": [
+                    1
+                ],
+                "pre_length": 1
+            },
+            "predictor_config": {
+                "input_size": 32,
+                "hidden_size": 256
+            }
+        }
+    }
+]
